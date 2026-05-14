@@ -1,0 +1,16 @@
+{{ block title }}
+    ラウンド {{ player.round_number }}: 提案の検討（あなた：プレイヤー{{ player.id_in_group }}）
+{{ endblock }}
+
+{{ block content }}
+    <div class="card bg-light m-3">
+        <div class="card-body">
+            <p>現在の予算: <strong>{{ budget }}</strong></p>
+            <p>相手からの提案（相手の取り分）: <strong>{{ x }}</strong></p>
+            <p>あなたの取り分（残り）: <strong>{{ receiver_share }}</strong></p>
+        </div>
+    </div>
+    <p>この提案を受け入れますか？</p>
+    {{ formfields }}
+    {{ next_button }}
+{{ endblock }}

@@ -1,0 +1,10 @@
+{{ block title }}
+    ラウンド {{ player.round_number }}: 提案（あなた：プレイヤー{{ player.id_in_group }}）
+{{ endblock }}
+
+{{ block content }}
+    <p>現在の予算は <strong>{{ budget }}</strong> です。</p>
+    <p>相手に提示する条件を決めてください。</p>
+    {{ formfields }}
+    {{ next_button }}
+{{ endblock }}

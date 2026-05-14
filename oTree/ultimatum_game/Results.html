@@ -1,0 +1,38 @@
+{{ block title }}
+    ラウンド {{ player.round_number }} の結果
+{{ endblock }}
+
+{{ block content }}
+    
+    {{ if agreed }}
+        <div class="alert alert-success">
+            <h4>合意に達しました！</h4>
+            <p>提案が受け入れられたため、ゲームは終了です。</p>
+        </div>
+        <p>
+            このラウンドの予算 <strong>{{ current_budget }}</strong> のうち、
+            提案額は <strong>{{ x }}</strong> でした。
+        </p>
+    {{ else }}
+        <div class="alert alert-danger">
+            <h4>合意に至りませんでした。</h4>
+        </div>
+        <p>提案は拒否されました。</p>
+        
+        {# next_budget が False でない（＝次のラウンドがある）場合のみ表示 #}
+        {{ if next_budget }}
+            <p>
+                次のラウンドに移行します。予算は割引因子により <strong>{{ next_budget }}</strong> に減少します。
+            </p>
+        {{ else }}
+            <p>
+                最大ラウンド数（{{ C.NUM_ROUNDS }}回）に達したため、ゲーム終了です。
+            </p>
+        {{ endif }}
+    {{ endif }}
+
+    <hr>
+    <p>あなたのこのラウンドの利得: <strong>{{ player.payoff }}</strong></p>
+
+    {{ next_button }}
+{{ endblock }}

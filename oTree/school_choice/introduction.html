@@ -1,0 +1,49 @@
+{{ block title }}
+    実験の説明
+{{ endblock }}
+
+{{ block content }}
+    <div class="card bg-light m-3">
+        <div class="card-body">
+            <p>
+                あなたは12人の学生のうちの1人として、4つの学校（A, B, C, D）のいずれかにマッチングされます。
+                各学校の定員は <strong>{{ C.CAPACITY }}名</strong> です。
+            </p>
+            <p>
+                あなたは自分の好みに基づいて、第1希望から第4希望までの学校を選択してください。
+                <strong>上位の希望校にマッチするほど、高い利得（スコア）を得ることができます</strong>。
+            </p>
+            <hr>
+            <h5>あなたの各学校への利得</h5>
+            <table class="table table-bordered text-center bg-white">
+                <thead>
+                    <tr>
+                        <th>学校 A</th>
+                        <th>学校 B</th>
+                        <th>学校 C</th>
+                        <th>学校 D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ my_payoffs.A }} ポイント</td>
+                        <td>{{ my_payoffs.B }} ポイント</td>
+                        <td>{{ my_payoffs.C }} ポイント</td>
+                        <td>{{ my_payoffs.D }} ポイント</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h5>採用されるアルゴリズム: {{ subsession.algorithm_type }}</h5>
+            <ul>
+                {{ if subsession.algorithm_type == 'DA' }}
+                    <li><strong>Deferred Acceptance (DA):</strong> 「仮ペア」を作り、より好ましい学生が来たら今のペアを解消して入れ替えるプロセスを繰り返す方式です。</li>
+                {{ else }}
+                    <li><strong>Immediate Acceptance (IA):</strong> 第1希望から順に、定員まで優先順位に従って即座にマッチを確定させていく方式です。</li>
+                {{ endif }}
+            </ul>
+        </div>
+    </div>
+
+    {{ next_button }}
+{{ endblock }}

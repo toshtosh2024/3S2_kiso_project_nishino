@@ -1,0 +1,11 @@
+{{ block title }}
+    投資意思決定
+{{ endblock }}
+{{ block content }}
+    <p>1グループ {{C.PLAYERS_PER_GROUP}} 人の公共財ゲームです。
+    最初に {{C.ENDOWMENT}} を持っており、各プレイヤはいくら投資するか
+    決定します。全員の投資額を {{C.MULTIPLIER}} 倍し、それを等分した額が
+    公共財からの利益として得られます。</p>
+    {{ formfields }}
+    {{ next_button }}
+{{ endblock }}

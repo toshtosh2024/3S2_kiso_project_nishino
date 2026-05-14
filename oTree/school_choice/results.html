@@ -1,0 +1,34 @@
+{{ block title }}
+    マッチング結果
+{{ endblock }}
+
+{{ block content }}
+    <div class="card border-primary m-3">
+        <div class="card-header">決定した学校</div>
+        <div class="card-body text-center">
+            <h1 class="display-4">学校 {{ player.matched_school }}</h1>
+            <p class="lead">
+                あなたは <strong>第{{ player.payoff_rank }}希望</strong> の学校にマッチしました。
+            </p>
+        </div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>あなたの第1希望</th><td>{{ player.rank1 }}</td>
+        </tr>
+        <tr>
+            <th>あなたの第2希望</th><td>{{ player.rank2 }}</td>
+        </tr>
+        <tr>
+            <th>あなたの第3希望</th><td>{{ player.rank3 }}</td>
+        </tr>
+        <tr>
+            <th>あなたの第4希望</th><td>{{ player.rank4 }}</td>
+        </tr>
+    </table>
+
+    <p>今回の獲得利得: <strong>{{ player.payoff }} ポイント</strong></p>
+
+    {{ next_button }}
+{{ endblock }}
