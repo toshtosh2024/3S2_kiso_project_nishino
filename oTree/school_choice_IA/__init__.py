@@ -3,7 +3,7 @@ from otree.api import *
 class C(BaseConstants):
     NAME_IN_URL = 'school_choice_ia'
     PLAYERS_PER_GROUP = 12
-    NUM_ROUNDS = 5
+    NUM_ROUNDS = 10
     
     # --- ここが定数の定義 ---
     SCHOOLS = ['A', 'B', 'C', 'D']
