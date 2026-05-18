@@ -26,10 +26,16 @@ SESSION_CONFIGS = [
         app_sequence=['my_public_goods'],
     ),
     dict(
-        name='school_choice',
-        display_name='School Choice',
+        name='school_choice_da',
+        display_name='School Choice (DA)',
         num_demo_participants=12,
-        app_sequence=['school_choice'],
+        app_sequence=['school_choice_da'],
+    ),
+    dict(
+        name='school_choice_ia',
+        display_name='School Choice (IA)',
+        num_demo_participants=12,
+        app_sequence=['school_choice_ia'],
     ),
 ]
 

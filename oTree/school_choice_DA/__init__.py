@@ -1,7 +1,7 @@
 from otree.api import *
 
 class C(BaseConstants):
-    NAME_IN_URL = 'school_choice'
+    NAME_IN_URL = 'school_choice_da'
     PLAYERS_PER_GROUP = 12
     NUM_ROUNDS = 5
     
