@@ -3,7 +3,7 @@ from otree.api import *
 class C(BaseConstants):
     NAME_IN_URL = 'school_choice'
     PLAYERS_PER_GROUP = 12
-    NUM_ROUNDS = 1
+    NUM_ROUNDS = 5
     
     # --- ここが定数の定義 ---
     SCHOOLS = ['A', 'B', 'C', 'D']
@@ -60,7 +60,11 @@ class Player(BasePlayer):
 def creating_session(subsession: Subsession):
     # セッションの設定（settings.py）からアルゴリズム名を取得する
     # 設定がない場合のデフォルトは 'DA' にする
-    subsession.algorithm_type = subsession.session.config.get('algorithm', 'DA')
+    subsession.algorithm_type = subsession.session.config.get('algorithm', 'I' \
+    'A')
+    
+    # ラウンドごとにプレイヤーの役割(id_in_group)をランダムにシャッフルする
+    subsession.group_randomly()
 # DA
 def run_da_algorithm(group: Group):
     players = group.get_players()
